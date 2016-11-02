@@ -51,15 +51,15 @@
         </Rectangle>
 
         <TextBlock Grid.Row="2" Text="byte :" />
-        <YK:SpinInput Grid.Row="2" Value="{Binding ByteLength}" Minimum="0" />
+        <YK:SpinInput Grid.Row="2" Value="{Binding ByteLength}" Minimum="0" StringFormat="#,0" />
 
         <TextBlock Grid.Row="3" Text="short :" />
-        <YK:SpinInput Grid.Row="3" Value="{Binding ShortLength}" Minimum="0" />
+        <YK:SpinInput Grid.Row="3" Value="{Binding ShortLength}" Minimum="0" StringFormat="#,0" />
 
         <TextBlock Grid.Row="4" Text="long :" />
-        <YK:SpinInput Grid.Row="4" Value="{Binding LongLength}" Minimum="0" />
+        <YK:SpinInput Grid.Row="4" Value="{Binding LongLength}" Minimum="0" StringFormat="#,0" />
 
         <TextBlock Grid.Row="5" Text="計算結果 :" />
-        <YK:SpinInput Grid.Row="5" Value="{Binding OffsetAddress, Mode=OneWay}" NumberStyle="HexNumber" StringFormat="X08" IsReadOnly="True" />
+        <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding OffsetAddress, Mode=OneWay, StringFormat='{}0x{0:X8}'}" IsReadOnly="True" TextAlignment="Right" Margin="4,4,6,4" Padding="2,2,20,2" />
     </Grid>
 </YK:Window>
